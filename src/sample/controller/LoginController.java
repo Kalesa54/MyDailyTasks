@@ -28,9 +28,18 @@ public class LoginController {
     @FXML
     void initialize() {
 
+        String loginText = loginUsername.getText().trim();
+        String loginPwd = loginPassword.getText().trim();
+
         loginButton.setOnAction(event -> {
-            System.out.println("Login clicked");
+            if (!loginText.equals("") || !loginPwd.equals("")) {
+                loginUser(loginText, loginPwd);
+            }
+        // 8:47
                 });
 
+    }
+
+    private void loginUser(String userName, String password ) {
     }
 }
