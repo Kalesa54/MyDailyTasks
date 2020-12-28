@@ -6,6 +6,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import sample.database.DatabaseHandler;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -47,7 +48,17 @@ public class SignupController {
 
     @FXML
     void initialize() {
+        DatabaseHandler databaseHandler = new DatabaseHandler();
 
+        signUpButton.setOnAction(event ->{
+
+        databaseHandler.signUpUser(signUpFirstName.getText(),signUpLastName.getText(),
+                signUpUsername.getText(),signUpPassword.getText(), signUpLocation.getText(),
+                signUpCheckBoxFemale.getText());
+
+                //gender: "Female");
+
+                });
         
     }
 }
