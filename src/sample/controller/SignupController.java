@@ -48,7 +48,25 @@ public class SignupController {
 
     @FXML
     void initialize() {
+
         DatabaseHandler databaseHandler = new DatabaseHandler();
+
+        signUpButton.setOnAction(event -> {
+
+            databaseHandler.signUpUser(signUpFirstName.getText(), signUpLastName.getText(), signUpUsername.getText()
+            ,signUpPassword.getText(), signUpLocation.getText(), "Female");
+
+        });
+    }
+}
+
+
+
+
+
+
+
+ /*DatabaseHandler databaseHandler = new DatabaseHandler();
 
         signUpButton.setOnAction(event ->{
 
@@ -58,7 +76,4 @@ public class SignupController {
 
                 //gender: "Female");
 
-                });
-        
-    }
-}
+                });*/
